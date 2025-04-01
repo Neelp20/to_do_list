@@ -69,5 +69,7 @@ def main():
         else:
             print("This is not a valid choice")
 
+    print("Thank you, Enjoy your day!")
+
 
 main()
