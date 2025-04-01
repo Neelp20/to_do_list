@@ -1,4 +1,29 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# To Do List
+
+![]()
+
+
+## Table of Contents
+
+* [Introduction](#Introduction)
+    * [Site Goals](#site-goals)
+
+## Introduction
+
+This project is designed for the people who want to manage daily tasks effortlessly, keeping track of what needs to be done on a daily basis.
+
+### Site Goals
+
+* Design a simple yet efficient tool to stay organized and productive.
+
+
+
+
+
+
+
+
+<!-- ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
 Welcome,
 
@@ -29,4 +54,4 @@ The deployment terminal is set to 80 columns by 24 rows. That means that each li
 
 ---
 
-Happy coding!
+Happy coding! -->
