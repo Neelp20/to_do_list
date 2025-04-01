@@ -7,6 +7,7 @@
 
 * [Introduction](#Introduction)
     * [Site Goals](#site-goals)
+    * [Target Audience](#target-audience)
 
 ## Introduction
 
@@ -15,6 +16,11 @@ This project is designed for the people who want to manage daily tasks effortles
 ### Site Goals
 
 * Design a simple yet efficient tool to stay organized and productive.
+
+### Target Audience
+
+* Perfect for breaking down large goals into smaller, actionable steps.
+* People looking to organize personal/professional goals, and plan to work on them accordingly.
 
 
 
