@@ -6,13 +6,23 @@ def add_task():
     """
     Allow users to add new task in the list.
     """
+    task_input = input("Enter your task(s) to be added(separated by comma): ")
+    print("Your tasks are added in the list")
+
+    tasks = [task_input() for task in task_input.split(",")]
+    if tasks:
+        print("Your task(s) has been added")
+        return tasks
+    else:
+        print("Invalid task.")
+        return None
     
 
 def show_task():
     """
     Allow users to see the list of tasks.
     """
-
+    
 
 def remove_task():
     """
@@ -35,7 +45,9 @@ def main():
 
         choice = input("Enter your choice (1-4): ")
         if choice == '1':
-            add_task()
+            tasks = add_task()
+            if tasks:
+                my_list.extend(tasks)
         elif choice == '2':
             show_task()
         elif choice == '3':
