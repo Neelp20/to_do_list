@@ -33,6 +33,13 @@ def remove_task():
     """
     Allow the users to remove a particular task from the list
     """
+    task_to_remove = input("Enter the task to be removed: ")
+
+    if task_to_remove in my_list:
+        my_list.remove(task_to_remove)
+        print(f"'{task_to_remove}' has been removed.")
+    else:
+        print(f"'{task_to_remove}' is not in the list.")
 
 
 def main():
