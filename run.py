@@ -1,4 +1,7 @@
 # To Do List
+my_list = []  # data will be stored in this variable.
+
+
 def add_task():
     """
     Allow users to add new task in the list.
@@ -21,7 +24,6 @@ def main():
     """
     The menu/user choices are written here.
     """
-    my_list = []  # data will be stored in this variable.
     is_open = True
 
     while is_open:
@@ -31,5 +33,17 @@ def main():
         print("3.Remove Task(s)")
         print("4.Close")
 
-        
+        choice = input("Enter your choice (1-4): ")
+        if choice == '1':
+            add_task()
+        elif choice == '2':
+            show_task()
+        elif choice == '3':
+            remove_task()
+        elif choice == '4':
+            is_open = False
+        else:
+            print("This is not a valid choice")
+
+
 main()
