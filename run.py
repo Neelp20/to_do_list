@@ -9,9 +9,8 @@ def add_task():
     task_input = input("Enter your task(s) to be added(separated by comma): ")
     print("Your tasks are added in the list")
 
-    tasks = [task_input() for task in task_input.split(",")]
+    tasks = [task.strip() for task in task_input.split(",")]
     if tasks:
-        print("Your task(s) has been added")
         return tasks
     else:
         print("Invalid task.")
@@ -22,6 +21,12 @@ def show_task():
     """
     Allow users to see the list of tasks.
     """
+    if not my_list:
+        print("Your list is empty")
+    else:
+        print("Your tasks are: ")
+        for task in my_list:
+            print(f"- {task}")
     
 
 def remove_task():
