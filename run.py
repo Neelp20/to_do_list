@@ -33,8 +33,8 @@ def add_task(datewise_tasks):
     if my_list:
         if date_task not in datewise_tasks:
             datewise_tasks[date_task] = []
-        datewise_tasks[date_task].extend(my_list)
-        print(f"Task(s) {my_list} have been added for {date_task}.")
+        datewise_tasks[date_task].extend(tasks)
+        print(f"Task(s) {tasks} have been added for {date_task}.")
     else:
         print("No valid tasks were added.") 
       
@@ -50,7 +50,7 @@ def show_task(datewise_tasks):
     """
     Allow users to see the list of tasks.
     """
-    if not datewise_tasks:
+    if not datewise_tasks:  # check if the dictionary is empty
         print("list is empty!")
     else:
         print("task is organized by date: ")
@@ -70,11 +70,11 @@ def remove_task(datewise_tasks):
     """
     Removes a specific task from the specified date.
     """
-    date_input = input("Enter the date for the task (DD-MM-YEAR) to be removed: ")
+    date_input = input("Enter the date for the task (D-M-Y) to be removed: ")
     try:
         # Validate and parse the date
         date_task = datetime.datetime.strptime(date_input, "%d-%m-%Y").date()
-    except ValueError:
+    except ValueError:  # for invalid formats
         print("Invalid date format! Please use DD-MM-YEAR.")
         return
 
