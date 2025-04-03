@@ -66,17 +66,41 @@ def show_task(datewise_tasks):
     #         print(f"- {task}")
     
 
-def remove_task():
+def remove_task(datewise_tasks):
     """
-    Allow the users to remove a particular task from the list
+    Removes a specific task from the specified date.
     """
-    task_to_remove = input("Enter the task to be removed: ")
+    date_input = input("Enter the date for the task (DD-MM-YEAR) to be removed: ")
+    try:
+        # Validate and parse the date
+        date_task = datetime.datetime.strptime(date_input, "%d-%m-%Y").date()
+    except ValueError:
+        print("Invalid date format! Please use DD-MM-YEAR.")
+        return
 
-    if task_to_remove in my_list:
-        my_list.remove(task_to_remove)
-        print(f"'{task_to_remove}' has been removed.")
+    if date_task not in datewise_tasks:
+        print(f"No tasks found for {date_task}.")
+        return
+
+    task_to_remove = input("Enter the task to be removed: ").strip()
+    if task_to_remove in datewise_tasks[date_task]:
+        datewise_tasks[date_task].remove(task_to_remove)
+        print(f"'{task_to_remove}' has been removed from {date_task}.")
+        # Remove date key if it becomes empty
+        if not datewise_tasks[date_task]:
+            del datewise_tasks[date_task]
     else:
-        print(f"'{task_to_remove}' is not in the list.")
+        print(f"'{task_to_remove}' is not in the task list for {date_task}.")
+    # """
+    # Allow the users to remove a particular task from the list
+    # """
+    # task_to_remove = input("Enter the task to be removed: ")
+
+    # if task_to_remove in my_list:
+    #     my_list.remove(task_to_remove)
+    #     print(f"'{task_to_remove}' has been removed.")
+    # else:
+    #     print(f"'{task_to_remove}' is not in the list.")
 
 
 def main():
@@ -101,7 +125,7 @@ def main():
         elif choice == '2':
             show_task(datewise_tasks)
         elif choice == '3':
-            remove_task()
+            remove_task(datewise_tasks)
         elif choice == '4':
             is_open = False
         else:
