@@ -1,22 +1,35 @@
 # To Do List
-my_list = []  # data will be stored in this variable.
-# valid_task = []
+from datetime import datetime  # geeksforgeeks.org
+
+my_list = []  # list of tasks will be stored in this variable.
+datewise_tasks = {}
+"""
+datewaise_tasks is a dictionary to keep tasks for each date separately.
+"""
 
 
 def add_task():
     """
     Allow users to add new task in the list.
     """
+    date_input = input("Enter the date for the task (DD-MM): ")
+    try:
+        # validate the date format
+        task_date = datetime.datetime.strptime(date_input, "%d-%m").date()
+    except ValueError:
+        print("Invalid date format! Please use DD-MM.")
+        return
+    
     task_input = input("Enter your task(s) to be added(separated by comma): ")
     # print("Your tasks are added in the list")
-
-    tasks = [task.strip() for task in task_input.split(",")]
+    tasks = [task.strip() for task in task_input.split(",") if task.strip()]
 
     for task in tasks:
         if task.isdigit():  # isdigit()method by w3schools.
             print(f"Error: '{task}' is a number so cannot be added!")
         else:
             my_list.append(task)
+      
 
     if my_list:
         print("Your task(s) have been added.")
@@ -30,6 +43,7 @@ def show_task():
     """
     Allow users to see the list of tasks.
     """
+    
     if not my_list:
         print("Your list is empty")
     else:
@@ -65,7 +79,7 @@ def main():
         print("4.Close")
 
         choice = input("Enter your choice (1-4): ")
-        
+      
         if choice == '1':
             tasks = add_task()
             if tasks:
