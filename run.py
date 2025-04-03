@@ -12,12 +12,12 @@ def add_task(datewise_tasks):
     """
     Allow users to add new task in the list.
     """
-    date_input = input("Enter the date for the task (DD-MM): ")
+    date_input = input("Enter the date for the task (DD-MM-YEAR): ")
     try:
         # validate the date format
-        date_task = datetime.datetime.strptime(date_input, "%d-%m").date()
+        date_task = datetime.datetime.strptime(date_input, "%d-%m-%Y").date()
     except ValueError:
-        print("Invalid date format! Please use DD-MM.")
+        print("Invalid date format! Please use DD-MM-YEAR.")
         return
     
     task_input = input("Enter your task(s) to be added(separated by comma): ")
