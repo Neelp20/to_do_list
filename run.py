@@ -1,5 +1,5 @@
 # To Do List
-from datetime import datetime  # geeksforgeeks.org
+import datetime  # geeksforgeeks.org
 
 my_list = []  # list of tasks will be stored in this variable.
 datewise_tasks = {}
@@ -8,14 +8,14 @@ datewaise_tasks is a dictionary to keep tasks for each date separately.
 """
 
 
-def add_task():
+def add_task(datewise_tasks):
     """
     Allow users to add new task in the list.
     """
     date_input = input("Enter the date for the task (DD-MM): ")
     try:
         # validate the date format
-        task_date = datetime.datetime.strptime(date_input, "%d-%m").date()
+        date_task = datetime.datetime.strptime(date_input, "%d-%m").date()
     except ValueError:
         print("Invalid date format! Please use DD-MM.")
         return
@@ -29,27 +29,41 @@ def add_task():
             print(f"Error: '{task}' is a number so cannot be added!")
         else:
             my_list.append(task)
-      
-
+    
     if my_list:
-        print("Your task(s) have been added.")
-        # return my_list
+        if date_task not in datewise_tasks:
+            datewise_tasks[date_task] = []
+        datewise_tasks[date_task].extend(my_list)
+        print(f"Task(s) {my_list} have been added for {date_task}.")
     else:
-        print("No valid tasks were added.")
+        print("No valid tasks were added.") 
+      
+    # if my_list:
+    #     print("Your task(s) have been added.")
+        # return my_list
+    # else:
+    #     print("No valid tasks were added.")
         # return None
     
 
-def show_task():
+def show_task(datewise_tasks):
     """
     Allow users to see the list of tasks.
     """
-    
-    if not my_list:
-        print("Your list is empty")
+    if not datewise_tasks:
+        print("list is empty!")
     else:
-        print("Your tasks are: ")
-        for task in my_list:
-            print(f"- {task}")
+        print("task is organized by date: ")
+        for date_task, tasks in datewise_tasks.items():
+            print(f"- {date_task}:")
+            for task in tasks:
+                print(f" * {task}")
+    # if not my_list:
+    #     print("Your list is empty")
+    # else:
+    #     print("Your tasks are: ")
+    #     for task in my_list:
+    #         print(f"- {task}")
     
 
 def remove_task():
@@ -81,11 +95,11 @@ def main():
         choice = input("Enter your choice (1-4): ")
       
         if choice == '1':
-            tasks = add_task()
+            tasks = add_task(datewise_tasks)
             if tasks:
                 my_list.extend(tasks)
         elif choice == '2':
-            show_task()
+            show_task(datewise_tasks)
         elif choice == '3':
             remove_task()
         elif choice == '4':
