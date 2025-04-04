@@ -15,7 +15,7 @@ def add_task(datewise_tasks):
     date_input = input("Enter the date for the task (DD-MM-YEAR): ")
     try:
         # validate the date format
-        task_date = datetime.datetime.strptime(date_input, "%d-%m-%Y").date()
+        date_task = datetime.datetime.strptime(date_input, "%d-%m-%Y").date()
     except ValueError:
         print("Invalid date format! Please use DD-MM-YEAR.")
         return
@@ -31,10 +31,10 @@ def add_task(datewise_tasks):
             my_list.append(task)
     
     if my_list:
-        if task_date not in datewise_tasks:
-            datewise_tasks[task_date] = []
-        datewise_tasks[task_date].extend(tasks)
-        print(f"Task(s) {tasks} have been added for {task_date}.")
+        if date_task not in datewise_tasks:
+            datewise_tasks[date_task] = []
+        datewise_tasks[date_task].extend(tasks)
+        print(f"Task(s) {tasks} have been added for {date_task}.")
     else:
         print("No valid tasks were added.") 
       
@@ -54,8 +54,8 @@ def show_task(datewise_tasks):
         print("list is empty!")
     else:
         print("task is organized by date: ")
-        for task_date, tasks in datewise_tasks.items():
-            print(f"- {task_date}:")
+        for date_task, tasks in datewise_tasks.items():
+            print(f"- {date_task}:")
             for task in tasks:
                 print(f" * {task}")
     # if not my_list:
@@ -63,7 +63,7 @@ def show_task(datewise_tasks):
     # else:
     #     print("Your tasks are: ")
     #     for task in my_list:
-    #         print(f"- {task}")
+    #         print(f"- {task}") 
     
 
 def remove_task(datewise_tasks):
@@ -73,24 +73,24 @@ def remove_task(datewise_tasks):
     date_input = input("Enter the date for the task (D-M-Y) to be removed: ")
     try:
         # Validate and parse the date
-        task_date = datetime.datetime.strptime(date_input, "%d-%m-%Y").date()
+        date_task = datetime.datetime.strptime(date_input, "%d-%m-%Y").date()
     except ValueError:  # for invalid formats
         print("Invalid date format! Please use DD-MM-YEAR.")
         return
 
-    if task_date not in datewise_tasks:
-        print(f"No tasks found for {task_date}.")
+    if date_task not in datewise_tasks:
+        print(f"No tasks found for {date_task}.")
         return
 
     task_to_remove = input("Enter the task to be removed: ").strip()
-    if task_to_remove in datewise_tasks[task_date]:
-        datewise_tasks[task_date].remove(task_to_remove)
-        print(f"'{task_to_remove}' has been removed from {task_date}.")
+    if task_to_remove in datewise_tasks[date_task]:
+        datewise_tasks[date_task].remove(task_to_remove)
+        print(f"'{task_to_remove}' has been removed from {date_task}.")
         # Remove date key if it becomes empty
-        if not datewise_tasks[task_date]:
-            del datewise_tasks[task_date]
+        if not datewise_tasks[date_task]:
+            del datewise_tasks[date_task]
     else:
-        print(f"'{task_to_remove}' is not in the task list for {task_date}.")
+        print(f"'{task_to_remove}' is not in the task list for {date_task}.")
     # """
     # Allow the users to remove a particular task from the list
     # """
