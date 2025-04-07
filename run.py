@@ -14,10 +14,13 @@ SCOPE_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPE_CREDS)
 SHEET = GSPREAD_CLIENT.open('to_do_list')
 
+"""
+To check if the our APIs are working:-
 mytasks = SHEET.worksheet('mytasks')
 
 data = mytasks.get_all_values()
 print(data)
+"""
 
 my_list = []  # list of tasks will be stored in this variable.
 datewise_tasks = {}
@@ -31,11 +34,11 @@ def add_task(datewise_tasks):
     Allow users to add new task in the list.
     """
     date_input = input("Enter the date for the task (DD-MM-YEAR): ")
-    try:
+    try:  # the code should work with no errors, if data is valid.
         # validate the date format
         date_task = datetime.datetime.strptime(date_input, "%d-%m-%Y").date()
-    except ValueError:
-        print("Invalid date format! Please use DD-MM-YEAR.")
+    except ValueError:  # print error tothe terminal ifcode doesntwork.
+        print("Invalid date format, Please use DD-MM-YEAR.")
         return
     
     task_input = input("Enter your task(s) to be added(separated by comma): ")
@@ -46,12 +49,18 @@ def add_task(datewise_tasks):
         if task.isdigit():  # isdigit()method by w3schools.
             print(f"Error: '{task}' is a number so cannot be added!")
         else:
+            # my_list = SHEET.worksheet("mytasks")
             my_list.append(task)
     
-    if my_list:
+    if tasks:
         if date_task not in datewise_tasks:
             datewise_tasks[date_task] = []
         datewise_tasks[date_task].extend(tasks)
+        
+        worksheet = SHEET.worksheet('mytasks')
+        for task in tasks:
+            worksheet.append_row([str(date_task), task])
+
         print(f"Task(s) {tasks} have been added for {date_task}.")
     else:
         print("No valid tasks were added.") 
