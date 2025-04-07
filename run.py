@@ -44,25 +44,6 @@ def add_task(datewise_tasks):
     task_input = input("Enter your task(s) to be added(separated by comma): ")
     tasks = [task.strip() for task in task_input.split(",") if task.strip()]
 
-    # for task in tasks:
-    #     if task.isdigit():  # isdigit()method by w3schools.
-    #         print(f"Error: '{task}' is a number so cannot be added!")
-    #     else:
-    #         my_list.append(task)
-    
-    # if tasks:
-    #     if date_task not in datewise_tasks:
-    #         datewise_tasks[date_task] = []
-    #     datewise_tasks[date_task].extend(tasks)
-        
-    #     worksheet = SHEET.worksheet('mytasks')
-    #     for task in tasks:
-    #         worksheet.append_row([str(date_task), task])
-
-    #     print(f"Task(s) {tasks} have been added for {date_task}.")
-    # else:
-    #     print("No valid tasks were added.")
-    # Refactoring:-
     if tasks:
         worksheet = SHEET.worksheet('mytasks')
         for task in tasks:
