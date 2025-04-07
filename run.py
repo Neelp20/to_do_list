@@ -22,14 +22,8 @@ data = mytasks.get_all_values()
 print(data)
 """
 
-my_list = []  # list of tasks will be stored in this variable.
-datewise_tasks = {}
-"""
-datewise_tasks is a dictionary to keep tasks for each date separately.
-"""
 
-
-def add_task(datewise_tasks):
+def add_task():
     """
     Allow users to add new tasks directly to Google Sheet.
     """
@@ -53,7 +47,7 @@ def add_task(datewise_tasks):
         print("No valid tasks were added.")
 
 
-def show_task(datewise_tasks):
+def show_task():
     """
     Display tasks directly by loading them from the Google Sheet.
     """
@@ -69,7 +63,7 @@ def show_task(datewise_tasks):
             print(f"- {row['Date']}: {row['Task']}")
 
 
-def remove_task(datewise_tasks):
+def remove_task():
     """
     Removes a specific task from the Google Sheet if the date and task matches.
     """
@@ -117,11 +111,11 @@ def main():
         choice = input("Enter your choice (1-4): ")
       
         if choice == '1':
-            add_task(datewise_tasks)
+            add_task()
         elif choice == '2':
-            show_task(datewise_tasks)
+            show_task()
         elif choice == '3':
-            remove_task(datewise_tasks)
+            remove_task()
         elif choice == '4':
             is_open = False
         else:
