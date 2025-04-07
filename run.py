@@ -77,14 +77,22 @@ def show_task(datewise_tasks):
     """
     Allow users to see the list of tasks.
     """
-    if not datewise_tasks:  # check if the dictionary is empty
+    # Fetch data from google sheet
+    worksheet = SHEET.worksheet('mytasks')  # Access mytasks worksheet.
+    data = worksheet.get_all_records()  # Fetch the records
+
+    if not data:  # check if the sheet is empty
         print("list is empty!")
     else:
         print("task is organized by date: ")
-        for date_task, tasks in datewise_tasks.items():
-            print(f"- {date_task}:")
-            for task in tasks:
-                print(f" * {task}")
+        for row in data:
+            date_task = row["Date"]
+            task = row["Task"]
+            print(f"- {date_task}: {task}")
+        # for date_task, tasks in datewise_tasks.items():
+        #     print(f"- {date_task}:")
+        #     for task in tasks:
+        #         print(f" * {task}")
     # if not my_list:
     #     print("Your list is empty")
     # else:
