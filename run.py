@@ -25,7 +25,7 @@ print(data)
 my_list = []  # list of tasks will be stored in this variable.
 datewise_tasks = {}
 """
-datewaise_tasks is a dictionary to keep tasks for each date separately.
+datewise_tasks is a dictionary to keep tasks for each date separately.
 """
 
 
@@ -63,8 +63,7 @@ def add_task(datewise_tasks):
 
         print(f"Task(s) {tasks} have been added for {date_task}.")
     else:
-        print("No valid tasks were added.") 
-      
+        print("No valid tasks were added.")
     # if my_list:
     #     print("Your task(s) have been added.")
         # return my_list
@@ -98,8 +97,7 @@ def show_task(datewise_tasks):
     # else:
     #     print("Your tasks are: ")
     #     for task in my_list:
-    #         print(f"- {task}") 
-    
+
 
 def remove_task(datewise_tasks):
     """
@@ -112,20 +110,41 @@ def remove_task(datewise_tasks):
     except ValueError:  # for invalid formats
         print("Invalid date format! Please use DD-MM-YEAR.")
         return
-
-    if date_task not in datewise_tasks:
-        print(f"No tasks found for {date_task}.")
-        return
-
+    # Get the task to remove
     task_to_remove = input("Enter the task to be removed: ").strip()
-    if task_to_remove in datewise_tasks[date_task]:
-        datewise_tasks[date_task].remove(task_to_remove)
+
+    worksheet = SHEET.worksheet('mytasks')
+    data = worksheet.get_all_records()
+
+    # Remove task from the google sheet if it exists
+    found = False
+    for index, row in enumerate(data, start=2):  # Start at 2 to skip header
+        if row["Date"] == str(date_task) and row["Task"] == task_to_remove:
+            worksheet.delete_rows(index)  # Delete the row from google sheet
+            found = True
+            print(f"Deleted row at index {index}: {row}")
+            break
+
+    # update datewise_tasks dictionary
+    if date_task in datewise_tasks:
+        if task_to_remove in datewise_tasks[date_task]:
+            datewise_tasks[date_task].remove(task_to_remove)
+            if not datewise_tasks[date_task]:
+                del datewise_tasks[date_task]
+
+    # Show appropriate message
+    if found:
         print(f"'{task_to_remove}' has been removed from {date_task}.")
-        # Remove date key if it becomes empty
-        if not datewise_tasks[date_task]:
-            del datewise_tasks[date_task]
     else:
-        print(f"'{task_to_remove}' is not in the task list for {date_task}.")
+        print("Task not found in the sheet")
+
+    # if task_to_remove in datewise_tasks[date_task]:
+    #     datewise_tasks[date_task].remove(task_to_remove)
+    #     print(f"'{task_to_remove}' has been removed from {date_task}.")
+        # if not datewise_tasks[date_task]:
+        #     del datewise_tasks[date_task]
+    # else:
+    #     print(f"'{task_to_remove}' is not in the task list for {date_task}.")
     # """
     # Allow the users to remove a particular task from the list
     # """
