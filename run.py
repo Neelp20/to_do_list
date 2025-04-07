@@ -66,9 +66,7 @@ def show_task(datewise_tasks):
     else:
         print("task is organized by date: ")
         for row in data:
-            date_task = row["Date"]
-            task = row["Task"]
-            print(f"- {date_task}: {task}")
+            print(f"- {row['Date']}: {row['Task']}")
 
 
 def remove_task(datewise_tasks):
