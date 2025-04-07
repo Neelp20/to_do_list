@@ -49,7 +49,6 @@ def add_task(datewise_tasks):
         if task.isdigit():  # isdigit()method by w3schools.
             print(f"Error: '{task}' is a number so cannot be added!")
         else:
-            # my_list = SHEET.worksheet("mytasks")
             my_list.append(task)
     
     if tasks:
@@ -64,13 +63,7 @@ def add_task(datewise_tasks):
         print(f"Task(s) {tasks} have been added for {date_task}.")
     else:
         print("No valid tasks were added.")
-    # if my_list:
-    #     print("Your task(s) have been added.")
-        # return my_list
-    # else:
-    #     print("No valid tasks were added.")
-        # return None
-    
+
 
 def show_task(datewise_tasks):
     """
@@ -88,15 +81,6 @@ def show_task(datewise_tasks):
             date_task = row["Date"]
             task = row["Task"]
             print(f"- {date_task}: {task}")
-        # for date_task, tasks in datewise_tasks.items():
-        #     print(f"- {date_task}:")
-        #     for task in tasks:
-        #         print(f" * {task}")
-    # if not my_list:
-    #     print("Your list is empty")
-    # else:
-    #     print("Your tasks are: ")
-    #     for task in my_list:
 
 
 def remove_task(datewise_tasks):
@@ -122,7 +106,6 @@ def remove_task(datewise_tasks):
         if row["Date"] == str(date_task) and row["Task"] == task_to_remove:
             worksheet.delete_rows(index)  # Delete the row from google sheet
             found = True
-            # print(f"Deleted row at index {index}: {row}")
             break
 
     # update datewise_tasks dictionary
@@ -137,24 +120,6 @@ def remove_task(datewise_tasks):
         print(f"'{task_to_remove}' has been removed from {date_task}.")
     else:
         print("Task not found in the sheet")
-
-    # if task_to_remove in datewise_tasks[date_task]:
-    #     datewise_tasks[date_task].remove(task_to_remove)
-    #     print(f"'{task_to_remove}' has been removed from {date_task}.")
-        # if not datewise_tasks[date_task]:
-        #     del datewise_tasks[date_task]
-    # else:
-    #     print(f"'{task_to_remove}' is not in the task list for {date_task}.")
-    # """
-    # Allow the users to remove a particular task from the list
-    # """
-    # task_to_remove = input("Enter the task to be removed: ")
-
-    # if task_to_remove in my_list:
-    #     my_list.remove(task_to_remove)
-    #     print(f"'{task_to_remove}' has been removed.")
-    # else:
-    #     print(f"'{task_to_remove}' is not in the list.")
 
 
 def main():
@@ -174,9 +139,6 @@ def main():
       
         if choice == '1':
             add_task(datewise_tasks)
-            # tasks = add_task(datewise_tasks)
-            # if tasks:
-            #     my_list.extend(tasks)
         elif choice == '2':
             show_task(datewise_tasks)
         elif choice == '3':
