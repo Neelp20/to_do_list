@@ -1,5 +1,23 @@
 # To Do List
+import gspread
+from google.oauth2.service_account import Credentials
 import datetime  # geeksforgeeks.org
+
+SCOPE = [
+    "https://www.googleapis.com/auth/spreadsheets",
+    "https://www.googleapis.com/auth/drive.file",
+    "https://www.googleapis.com/auth/drive"
+    ]
+
+CREDS = Credentials.from_service_account_file('creds.json')
+SCOPE_CREDS = CREDS.with_scopes(SCOPE)
+GSPREAD_CLIENT = gspread.authorize(SCOPE_CREDS)
+SHEET = GSPREAD_CLIENT.open('to_do_list')
+
+mytasks = SHEET.worksheet('mytasks')
+
+data = mytasks.get_all_values()
+print(data)
 
 my_list = []  # list of tasks will be stored in this variable.
 datewise_tasks = {}
