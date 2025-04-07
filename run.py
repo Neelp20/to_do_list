@@ -31,7 +31,7 @@ datewise_tasks is a dictionary to keep tasks for each date separately.
 
 def add_task(datewise_tasks):
     """
-    Allow users to add new task in the list.
+    Allow users to add new tasks directly to Google Sheet.
     """
     date_input = input("Enter the date for the task (DD-MM-YEAR): ")
     try:  # the code should work with no errors, if data is valid.
@@ -74,7 +74,7 @@ def add_task(datewise_tasks):
 
 def show_task(datewise_tasks):
     """
-    Allow users to see the list of tasks.
+    Display tasks directly by loading them from the Google Sheet.
     """
     # Fetch data from google sheet
     worksheet = SHEET.worksheet('mytasks')  # Access mytasks worksheet.
@@ -101,7 +101,7 @@ def show_task(datewise_tasks):
 
 def remove_task(datewise_tasks):
     """
-    Removes a specific task from the specified date.
+    Removes a specific task from the Google Sheet if the date and task matches.
     """
     date_input = input("Enter the date for the task (D-M-Y) to be removed: ")
     try:
@@ -122,7 +122,7 @@ def remove_task(datewise_tasks):
         if row["Date"] == str(date_task) and row["Task"] == task_to_remove:
             worksheet.delete_rows(index)  # Delete the row from google sheet
             found = True
-            print(f"Deleted row at index {index}: {row}")
+            # print(f"Deleted row at index {index}: {row}")
             break
 
     # update datewise_tasks dictionary
@@ -173,9 +173,10 @@ def main():
         choice = input("Enter your choice (1-4): ")
       
         if choice == '1':
-            tasks = add_task(datewise_tasks)
-            if tasks:
-                my_list.extend(tasks)
+            add_task(datewise_tasks)
+            # tasks = add_task(datewise_tasks)
+            # if tasks:
+            #     my_list.extend(tasks)
         elif choice == '2':
             show_task(datewise_tasks)
         elif choice == '3':
