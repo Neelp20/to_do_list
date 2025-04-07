@@ -94,13 +94,6 @@ def remove_task(datewise_tasks):
             found = True
             break
 
-    # update datewise_tasks dictionary
-    if date_task in datewise_tasks:
-        if task_to_remove in datewise_tasks[date_task]:
-            datewise_tasks[date_task].remove(task_to_remove)
-            if not datewise_tasks[date_task]:
-                del datewise_tasks[date_task]
-
     # Show appropriate message
     if found:
         print(f"'{task_to_remove}' has been removed from {date_task}.")
