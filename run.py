@@ -69,15 +69,18 @@ def remove_task():
     """
     Removes a specific task from the Google Sheet if the date and task matches.
     """
-    date_input = input(
-        "Enter the date for the task (DD-MM-YYYY) to be removed: "
-    )
-    try:
-        # Validate and parse the date
-        date_task = datetime.datetime.strptime(date_input, "%d-%m-%Y").date()
-    except ValueError:  # for invalid formats
-        print("Invalid date format! Please use DD-MM-YEAR.")
-        return
+    while True:
+        date_input = input(
+            "Enter the date for the task (DD-MM-YYYY) to be removed: "
+        )
+    
+        try:
+            date_task = datetime.datetime.strptime(
+                date_input, "%d-%m-%Y").date()
+        except ValueError:  # for invalid formats
+            print("Invalid date format! Please use DD-MM-YEAR.")
+            continue
+        break
     # Get the task to remove
     task_to_remove = input("Enter the task to be removed: ").strip()
 
