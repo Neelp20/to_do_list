@@ -28,19 +28,19 @@ def add_task():
     Allow users to add new tasks directly to Google Sheet.
     """
     while True:
-        date_input = input("Enter the date for the task (DD-MM-YEAR): ")
+        date_input = input("Enter the date for the task (DD-MM-YEAR): \n")
         try:
             date_task = datetime.datetime.strptime(
                 date_input, "%d-%m-%Y").date()
         except ValueError:
-            print("Invalid date format! Please use DD-MM-YEAR.")
+            print("\nInvalid date format! Please use DD-MM-YEAR.\n")
             continue
         break
 
     valid_tasks = []
     while not valid_tasks:
         task_input = input(
-            "Enter your task(s) to be added(separated by comma): ")
+            "\nEnter your task(s) to be added(separated by comma): \n")
         tasks = [
             task.strip() for task in task_input.split(",") if task.strip()]
 
@@ -54,7 +54,7 @@ def add_task():
     for task in valid_tasks:
         worksheet.append_row([str(date_task), task])
 
-    print(f"Task(s) {tasks} have been added for {date_task}.")
+    print(f"\nTask(s) {tasks} have been added for {date_task}.\n")
 
 
 def show_task():
@@ -68,9 +68,9 @@ def show_task():
     if not data:  # check if the sheet is empty
         print("list is empty!")
     else:
-        print("task is organized by date: ")
+        print("\ntask is organized by date: ")
         for row in data:
-            print(f"- {row['Date']}: {row['Task']}")
+            print(f"- {row['Date']}: {row['Task']}\n")
 
 
 def remove_task():
@@ -79,18 +79,18 @@ def remove_task():
     """
     while True:
         date_input = input(
-            "Enter the date for the task (DD-MM-YYYY) to be removed: "
+            "Enter the date for the task (DD-MM-YYYY) to be removed: \n"
         )
     
         try:
             date_task = datetime.datetime.strptime(
                 date_input, "%d-%m-%Y").date()
         except ValueError:  # for invalid formats
-            print("Invalid date format! Please use DD-MM-YEAR.")
+            print("Invalid date format! Please use DD-MM-YEAR.\n")
             continue
         break
     # Get the task to remove
-    task_to_remove = input("Enter the task to be removed: ").strip()
+    task_to_remove = input("\nEnter the task to be removed: \n").strip()
 
     worksheet = SHEET.worksheet('mytasks')
     data = worksheet.get_all_records()
@@ -105,9 +105,9 @@ def remove_task():
 
     # Show appropriate message
     if found:
-        print(f"'{task_to_remove}' has been removed from {date_task}.")
+        print(f"'{task_to_remove}' has been removed from {date_task}.\n")
     else:
-        print("Task not found in the sheet")
+        print("Task not found in the sheet\n")
 
 
 def main():
@@ -126,7 +126,7 @@ def main():
         print("4.Close")
         print("****************")
 
-        choice = input("Enter your choice (1-4): ")
+        choice = input("\nEnter your choice (1-4): \n")
 
         if choice == '1':
             add_task()
