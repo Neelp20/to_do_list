@@ -27,14 +27,15 @@ def add_task():
     """
     Allow users to add new tasks directly to Google Sheet.
     """
-    date_input = input("Enter the date for the task (DD-MM-YEAR): ")
-    try:  # the code should work with no errors, if data is valid.
-        # validate the date format
-        date_task = datetime.datetime.strptime(date_input, "%d-%m-%Y").date()
-    except ValueError:  # print error tothe terminal ifcode doesntwork.
-        print("Invalid date format, Please use DD-MM-YEAR.")
-        return
-    
+    while True:
+        date_input = input("Enter the date for the task (DD-MM-YEAR): ")
+        try:
+            date_task = datetime.datetime.strptime(date_input, "%d-%m-%Y").date()
+        except ValueError:
+            print("Invalid date format! Please use DD-MM-YEAR.")
+            continue
+        break
+        
     task_input = input("Enter your task(s) to be added(separated by comma): ")
     tasks = [task.strip() for task in task_input.split(",") if task.strip()]
 
@@ -110,7 +111,7 @@ def main():
         print("4.Close")
 
         choice = input("Enter your choice (1-4): ")
-      
+
         if choice == '1':
             add_task()
         elif choice == '2':
