@@ -117,11 +117,14 @@ def main():
     is_open = True
 
     while is_open:
+        print("****************")
         print("My To Do List")
+        print("****************")
         print("1.Add Task(s)")
         print("2.Show Task(s)")
         print("3.Remove Task(s)")
         print("4.Close")
+        print("****************")
 
         choice = input("Enter your choice (1-4): ")
 
