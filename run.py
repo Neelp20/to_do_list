@@ -2,6 +2,11 @@
 import gspread
 from google.oauth2.service_account import Credentials
 import datetime  # geeksforgeeks.org
+# import colorama
+from colorama import init, Fore, Back, Style
+init()
+# print(Style.RESET_ALL)
+
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -28,19 +33,25 @@ def add_task():
     Allow users to add new tasks directly to Google Sheet.
     """
     while True:
-        date_input = input("Enter the date for the task (DD-MM-YEAR): \n")
+        date_input = input(Style.BRIGHT + Back.GREEN +
+                           "Enter the date for the task (DD-MM-YEAR): \n" +
+                           Style.RESET_ALL)
         try:
             date_task = datetime.datetime.strptime(
                 date_input, "%d-%m-%Y").date()
         except ValueError:
-            print("\nInvalid date format! Please use DD-MM-YEAR.\n")
+            print(Style.BRIGHT + Fore.RED + 
+                  "\nInvalid date format! Please use DD-MM-YEAR.\n"
+                  + Style.RESET_ALL)
             continue
         break
 
     valid_tasks = []
     while not valid_tasks:
         task_input = input(
-            "\nEnter your task(s) to be added(separated by comma): \n")
+            Style.BRIGHT + Back.GREEN +
+            "\nEnter your task(s) to be added(separated by comma): \n" +
+            Style.RESET_ALL)
         tasks = [
             task.strip() for task in task_input.split(",") if task.strip()]
 
@@ -54,7 +65,8 @@ def add_task():
     for task in valid_tasks:
         worksheet.append_row([str(date_task), task])
 
-    print(f"\nTask(s) {tasks} have been added for {date_task}.\n")
+    print(Fore.GREEN + f"\nTask(s) {tasks} have been added for {date_task}.\n"
+          + Style.RESET_ALL)
 
 
 def show_task():
@@ -81,7 +93,6 @@ def remove_task():
         date_input = input(
             "Enter the date for the task (DD-MM-YYYY) to be removed: \n"
         )
-    
         try:
             date_task = datetime.datetime.strptime(
                 date_input, "%d-%m-%Y").date()
@@ -89,6 +100,7 @@ def remove_task():
             print("Invalid date format! Please use DD-MM-YEAR.\n")
             continue
         break
+
     # Get the task to remove
     task_to_remove = input("\nEnter the task to be removed: \n").strip()
 
@@ -140,6 +152,6 @@ def main():
             print("This is not a valid choice")
 
     print("Thank you, Enjoy your day!")
-
+    
 
 main()
