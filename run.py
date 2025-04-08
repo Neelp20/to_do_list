@@ -36,17 +36,25 @@ def add_task():
             print("Invalid date format! Please use DD-MM-YEAR.")
             continue
         break
-        
-    task_input = input("Enter your task(s) to be added(separated by comma): ")
-    tasks = [task.strip() for task in task_input.split(",") if task.strip()]
 
-    if tasks:
-        worksheet = SHEET.worksheet('mytasks')
+    valid_tasks = []
+    while not valid_tasks:
+        task_input = input(
+            "Enter your task(s) to be added(separated by comma): ")
+        tasks = [
+            task.strip() for task in task_input.split(",") if task.strip()]
+
         for task in tasks:
-            worksheet.append_row([str(date_task), task])
-        print(f"Task(s) {tasks} have been added for {date_task}.")
-    else:
-        print("No valid tasks were added.")
+            if task.isdigit():
+                print(f"Error: '{task}' is a number so cannot be added!")
+            else:
+                valid_tasks.append(task)
+
+    worksheet = SHEET.worksheet('mytasks')
+    for task in valid_tasks:
+        worksheet.append_row([str(date_task), task])
+
+    print(f"Task(s) {tasks} have been added for {date_task}.")
 
 
 def show_task():
