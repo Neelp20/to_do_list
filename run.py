@@ -33,9 +33,9 @@ def add_task():
     Allow users to add new tasks directly to Google Sheet.
     """
     while True:
-        date_input = input(Style.BRIGHT + Back.GREEN +
-                           "Enter the date for the task (DD-MM-YEAR): \n" +
-                           Style.RESET_ALL)
+        date_input = input(Style.BRIGHT + Fore.YELLOW +
+                           "Enter the date for the task (DD-MM-YEAR): \n"
+                           + Style.RESET_ALL)
         try:
             date_task = datetime.datetime.strptime(
                 date_input, "%d-%m-%Y").date()
@@ -49,7 +49,7 @@ def add_task():
     valid_tasks = []
     while not valid_tasks:
         task_input = input(
-            Style.BRIGHT + Back.GREEN +
+            Style.BRIGHT + Fore.YELLOW +
             "\nEnter your task(s) to be added(separated by comma): \n" +
             Style.RESET_ALL)
         tasks = [
@@ -147,7 +147,7 @@ def main():
         print("4.Close")
         print("****************")
 
-        choice = input(Fore.YELLOW + "\nEnter your choice (1-4): \n"
+        choice = input(Fore.YELLOW + "Enter your choice (1-4): \n"
                        + Style.RESET_ALL)
 
         if choice == '1':
