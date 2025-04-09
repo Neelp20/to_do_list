@@ -40,7 +40,7 @@ def add_task():
             date_task = datetime.datetime.strptime(
                 date_input, "%d-%m-%Y").date()
         except ValueError:
-            print(Style.BRIGHT + Fore.RED + 
+            print(Style.BRIGHT + Fore.RED +
                   "\nInvalid date format! Please use DD-MM-YEAR.\n"
                   + Style.RESET_ALL)
             continue
@@ -78,11 +78,11 @@ def show_task():
     data = worksheet.get_all_records()  # Fetch the records
 
     if not data:  # check if the sheet is empty
-        print("list is empty!")
+        print(Fore.RED + "list is empty!" + Style.RESET_ALL)
     else:
-        print("\ntask is organized by date: ")
+        print(Fore.GREEN + "\ntask is organized by date: " + Style.RESET_ALL)
         for row in data:
-            print(f"- {row['Date']}: {row['Task']}\n")
+            print(f" {row['Date']}: {row['Task']}\n")
 
 
 def remove_task():
@@ -91,18 +91,23 @@ def remove_task():
     """
     while True:
         date_input = input(
+            Fore.YELLOW +
             "Enter the date for the task (DD-MM-YYYY) to be removed: \n"
-        )
+            + Style.RESET_ALL)
         try:
             date_task = datetime.datetime.strptime(
                 date_input, "%d-%m-%Y").date()
         except ValueError:  # for invalid formats
-            print("Invalid date format! Please use DD-MM-YEAR.\n")
+            print(Fore.RED +
+                  "Invalid date format! Please use DD-MM-YEAR.\n"
+                  + Style.RESET_ALL)
             continue
         break
 
     # Get the task to remove
-    task_to_remove = input("\nEnter the task to be removed: \n").strip()
+    task_to_remove = input(
+        Fore.YELLOW + "\nEnter the task to be removed: \n"
+        + Style.RESET_ALL).strip()
 
     worksheet = SHEET.worksheet('mytasks')
     data = worksheet.get_all_records()
@@ -117,9 +122,12 @@ def remove_task():
 
     # Show appropriate message
     if found:
-        print(f"'{task_to_remove}' has been removed from {date_task}.\n")
+        print(Fore.GREEN +
+              f"'{task_to_remove}' has been removed from {date_task}.\n"
+              + Style.RESET_ALL)
     else:
-        print("Task not found in the sheet\n")
+        print(Fore.RED + "Task not found in the sheet\n"
+              + Style.RESET_ALL)
 
 
 def main():
@@ -130,7 +138,8 @@ def main():
 
     while is_open:
         print("****************")
-        print("My To Do List")
+        print(Style.BRIGHT + Fore.RED + Back.GREEN + "My To Do List"
+              + Style.RESET_ALL)
         print("****************")
         print("1.Add Task(s)")
         print("2.Show Task(s)")
@@ -138,7 +147,8 @@ def main():
         print("4.Close")
         print("****************")
 
-        choice = input("\nEnter your choice (1-4): \n")
+        choice = input(Fore.YELLOW + "\nEnter your choice (1-4): \n"
+                       + Style.RESET_ALL)
 
         if choice == '1':
             add_task()
@@ -149,9 +159,10 @@ def main():
         elif choice == '4':
             is_open = False
         else:
-            print("This is not a valid choice")
+            print(Fore.RED + "This is not a valid choice" + Style.RESET_ALL)
 
-    print("Thank you, Enjoy your day!")
-    
+    print(Back.MAGENTA + Style.BRIGHT + "Thank you, Enjoy your day!"
+          + Style.RESET_ALL)
+
 
 main()
