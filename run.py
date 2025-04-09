@@ -57,7 +57,9 @@ def add_task():
 
         for task in tasks:
             if task.isdigit():
-                print(f"Error: '{task}' is a number so cannot be added!")
+                print(Style.BRIGHT + Fore.RED +
+                      f"\nError: '{task}' is a number so cannot be added!"
+                      + Style.RESET_ALL)
             else:
                 valid_tasks.append(task)
 
