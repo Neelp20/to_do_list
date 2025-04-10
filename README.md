@@ -10,7 +10,9 @@
     * [Target Audience](#target-audience)
     * [User stories](#user-stories)
     * [Features Planned](#features-planned)
-* [Structure]()
+* [Structure](#structure)
+    * [Features](#features)
+    * [Features left to implement]()
 
 ## Introduction
 
@@ -61,6 +63,10 @@ IMPLEMENTATION
     * The user must input a correct number corresponding to the main menu options. If an invalid choice is made, an error message will be displayed and the main menu will be shown again.
 
 ![Main menu](docs/screenshots/main_menu.png)
+
+Main Menu - Invalid Choice
+
+![Main Menu - Invalid Choice](docs/screenshots/invalid_input.png)
 
 USER STORY
 
@@ -150,6 +156,8 @@ IMPLEMENTATION
     Close Menu:
 
     ![Close](docs/screenshots/exit_app.png)
+
+    
 
          
    
