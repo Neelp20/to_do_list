@@ -157,6 +157,10 @@ IMPLEMENTATION
 
     ![Close](docs/screenshots/exit_app.png)
 
+    **Error Handling**
+
+    Error handling was implemented throughout the application with the use of try/except statements to handle raised for things like, Value errors.
+
     
 
          
