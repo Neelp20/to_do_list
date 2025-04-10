@@ -8,10 +8,11 @@
 * [Introduction](#Introduction)
     * [Site Goals](#site-goals)
     * [Target Audience](#target-audience)
+    * [User stories](#user-stories)
 
 ## Introduction
 
-This project is designed for the people who want to manage daily tasks effortlessly, keeping track of what needs to be done on a daily basis.
+This project is designed for the people who want to manage daily tasks effortlessly, keeping track of what needs to be done on a daily basis.Perfect for breaking down large goals into smaller, actionable steps.
 
 ### Site Goals
 
@@ -19,9 +20,15 @@ This project is designed for the people who want to manage daily tasks effortles
 
 ### Target Audience
 
-* Perfect for breaking down large goals into smaller, actionable steps.
 * People looking to organize personal/professional goals, and plan to work on them accordingly.
 
+### User Stories
+
+* As a User, I would like to be able to easily find the various options on menu so that i can add / show / remove tasks.
+* As a User, I would like to be able to manage task datewise so that i can add tasks for a particular date with ease.
+* As a User, I would like to be able to view records so i can plan for the next task due.
+* As a User, I would like to be able to remove the task when its not needed to be in the records anymore.
+* As a User, I would like to be able to exit the application without having to close the browser.
 
 
 
