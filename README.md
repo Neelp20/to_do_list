@@ -131,6 +131,22 @@ IMPLEMENTATION
 
     ![Task Not Found](docs/screenshots/task_not_found.png)
 
+    USER STORY
+
+    `
+    As a User, I would like to be able to exit the application without having to close the browser.
+    `
+
+    IMPLEMENTATION
+    * Main Menu
+      * Close
+        * When the user decides to close the application without making a selection from the main menu.
+        * Upon entering the option "4", the user will receive a message thanking them.
+
+    Close Menu:
+
+    ![Close](docs/screenshots/exit_app.png)
+
          
    
 
