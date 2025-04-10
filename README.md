@@ -96,8 +96,8 @@ IMPLEMENTATION
   * Main Menu
     * Show Task
       * When the user selects Show Task(s) from the main menu:-
-      * the task list will be displayed.
-      * If no tasks are present, an empty list will be shown instead.
+        * the task list will be displayed.
+        * If no tasks are present, an empty list will be shown instead.
 
     Show Task Menu
 
@@ -106,6 +106,32 @@ IMPLEMENTATION
     Show Task menu :- empty list
 
     ![Show Task - empty list](docs/screenshots/empty_list.png)
+
+    USER STORY
+
+    `
+    As a User, I would like to be able to remove the task when its not needed to be in the records anymore.
+    `
+
+    IMPLEMENTATION
+    * Main Menu
+      * Remove Task
+        * When the user selects Remove Task(s) from the main menu, the following options will appear:
+          * Enter the date for the task (DD-MM-YYYY) to be removed:
+            * The user is required to provide the correct date format, when asked to enter the date. If an invalid format is entered, they will be prompted repeatedly until the correct format is provided.
+          * Enter the task to be removed:
+            * The user need to enter the task present in the list only.
+        * Once both inputs are correctly provided, the user will receive confirmation that the selected task has been removed for the selected date.
+
+    Remove Task Menu :-
+
+    ![Remove Task](docs/screenshots/remove_task.png)
+
+    Remove Task Menu (Task Not Found):
+
+    ![Task Not Found](docs/screenshots/task_not_found.png)
+
+         
    
 
 
