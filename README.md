@@ -103,6 +103,10 @@ IMPLEMENTATION
 
     ![Show Task](docs/screenshots/show_task.png)
 
+    Show Task Menu :- Multiple Tasks
+
+    ![Show Task - Multiple](docs/screenshots/task_lists.png)
+
     Show Task menu :- empty list
 
     ![Show Task - empty list](docs/screenshots/empty_list.png)
