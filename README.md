@@ -41,7 +41,7 @@ This project is designed for the people who want to manage daily tasks effortles
     * Add, view and delete tasks functionality.
 * User friendly validation and error messages for smoother input handling.
 * Functionality to remove tasks directly based on the date and task description.
-* Option to exit the application at any time.
+* Option to close the application in the main menu.
 
 ## Structure
 
@@ -160,6 +160,10 @@ IMPLEMENTATION
     **Error Handling**
 
     Error handling was implemented throughout the application with the use of try/except statements to handle raised for things like, Value errors.
+
+    ### Features Left to Implement
+
+    As a future improvement, I plan to implement a feature that allows users to exit the application at any time by entering the keyword '0'. 
 
     
 
