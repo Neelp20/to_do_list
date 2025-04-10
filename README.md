@@ -10,6 +10,7 @@
     * [Target Audience](#target-audience)
     * [User stories](#user-stories)
     * [Features Planned](#features-planned)
+* [Structure]()
 
 ## Introduction
 
@@ -39,6 +40,26 @@ This project is designed for the people who want to manage daily tasks effortles
 * User friendly validation and error messages for smoother input handling.
 * Functionality to remove tasks directly based on the date and task description.
 * Option to exit the application at any time.
+
+## Structure
+
+### Features
+
+USER STORY
+
+
+As a User, I would like to be able to easily find the various options on menu so that i can add / show / remove tasks.
+
+IMPLEMENTATION
+* Main Menu
+    * When the application starts, a main menu will appear with the following options:
+         * 1 - Add Task(s)
+         * 2 - Show Task(s)
+         * 3 - Remove Task(s)
+         * 4 - Close
+    * The user must input a correct number corresponding to the main menu options. If an invalid choice is made, an error message will be displayed and the main menu will be shown again.
+
+![Main menu](docs/screenshots/main_menu.png)
 
 
 
