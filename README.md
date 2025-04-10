@@ -83,8 +83,29 @@ IMPLEMENTATION
   ![Add Task](docs/screenshots/add_task.png)
 
   * Add Task:- Incorrect data
-  
+
   ![Add Task:-Incorrect data](docs/screenshots/add_task_error.png)
+
+  USER STORY
+
+  `
+  As a User, I would like to be able to view records so i can plan for the next task due.
+  `
+
+  IMPLEMENTATION
+  * Main Menu
+    * Show Task
+      * When the user selects Show Task(s) from the main menu:-
+      * the task list will be displayed.
+      * If no tasks are present, an empty list will be shown instead.
+
+    Show Task Menu
+
+    ![Show Task](docs/screenshots/show_task.png)
+
+    Show Task menu :- empty list
+
+    ![Show Task - empty list](docs/screenshots/empty_list.png)
    
 
 
