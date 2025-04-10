@@ -9,6 +9,7 @@
     * [Site Goals](#site-goals)
     * [Target Audience](#target-audience)
     * [User stories](#user-stories)
+    * [Features Planned](#features-planned)
 
 ## Introduction
 
@@ -29,6 +30,15 @@ This project is designed for the people who want to manage daily tasks effortles
 * As a User, I would like to be able to view records so i can plan for the next task due.
 * As a User, I would like to be able to remove the task when its not needed to be in the records anymore.
 * As a User, I would like to be able to exit the application without having to close the browser.
+
+### Features Planned
+
+* Simple, easy-to-use application with clear navigation.
+* Integrated Google Sheets storage for:
+    * Add, view and delete tasks functionality.
+* User friendly validation and error messages for smoother input handling.
+* Functionality to remove tasks directly based on the date and task description.
+* Option to exit the application at any time.
 
 
 
