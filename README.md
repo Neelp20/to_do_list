@@ -47,8 +47,9 @@ This project is designed for the people who want to manage daily tasks effortles
 
 USER STORY
 
-
+`
 As a User, I would like to be able to easily find the various options on menu so that i can add / show / remove tasks.
+`
 
 IMPLEMENTATION
 * Main Menu
@@ -60,6 +61,31 @@ IMPLEMENTATION
     * The user must input a correct number corresponding to the main menu options. If an invalid choice is made, an error message will be displayed and the main menu will be shown again.
 
 ![Main menu](docs/screenshots/main_menu.png)
+
+USER STORY
+
+`
+As a User, I would like to be able to manage task datewise so that i can add tasks for a particular date with ease.
+`
+
+IMPLEMENTATION
+* Main Menu
+  * Add Task
+    * When the user selects Add Task(s) from the main menu, the following options will appear:
+      * Enter the date for the task (DD-MM-YEAR) - 
+      * Enter your task(s) to be added(separated by comma) - 
+  * The user is required to provide the correct date format, when asked to enter the date. If an invalid format is entered, they will be prompted repeatedly until the correct format is provided.
+  * The user is required to provide text strings only, when asked to enter the task.
+  * Once both inputs are correctly provided, the user will receive confirmation that the task has been added for the selected date.
+
+  Add Task menu
+
+  ![Add Task](docs/screenshots/add_task.png)
+
+  * Add Task:- Incorrect data
+  
+  ![Add Task:-Incorrect data](docs/screenshots/add_task_error.png)
+   
 
 
 
