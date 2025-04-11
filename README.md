@@ -16,7 +16,13 @@
 * [Technologies](#technologies)
 * [Testing](#testing)
     * [Pep8ci Validation](#pep8ci-validation)
-* [Deployment]()
+* [Deployment](#deployment)
+    * [Version Control](#version-control)
+    * [Heroku Deployment](#heruko-deployment)
+    * [Clone Locally](#clone-locally)
+* [Credits](#credits)
+    * [Content](#contents)
+
 
 
 ## Introduction
@@ -188,6 +194,7 @@ IMPLEMENTATION
     ## Deployment
 
     ### Version Control
+
     The site was created using the Visual Studio Code editor and pushed to github to the remote repository `to_do_list`.
 
     The following git commands were used throughout development to push code to the remote repo:
@@ -219,6 +226,22 @@ IMPLEMENTATION
     * Project will now be cloned locally.
 
     Note: If you want to use the application, follow the steps provided for Google Sheet.
+
+    ## Credits
+
+    ### Contents
+
+    [Create Date Range](https://www.geeksforgeeks.org/python-datetime-strptime-function/)
+
+    [Flow Chart](https://www.lucidchart.com/pages)
+
+    [Line too long](https://note.nkmk.me/en/python-long-string/)
+
+    [Colorama](https://www.geeksforgeeks.org/introduction-to-python-colorama/)
+
+    [sorting date in ascending order](https://www.w3schools.com/python/ref_list_sort.asp)
+
+
 
 
 
