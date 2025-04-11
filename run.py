@@ -72,8 +72,11 @@ def add_task():
         f"\nTask(s) {valid_tasks} have been added for {date_task}.\n" +
         Style.RESET_ALL)
     
-    
+
 def get_date(e):
+    """
+    Extracts the value associated with the 'Date' key from a dictionary.
+    """
     return e['Date']
 
 
@@ -84,7 +87,7 @@ def show_task():
     # Fetch data from google sheet
     worksheet = SHEET.worksheet('mytasks')  # Access mytasks worksheet.
     data = worksheet.get_all_records()  # Fetch the records
-    data.sort(key=get_date)
+    data.sort(key=get_date)  # to arrange ascending order
 
     if not data:  # check if the sheet is empty
         print(Fore.RED + "list is empty!" + Style.RESET_ALL)
