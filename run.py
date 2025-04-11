@@ -67,8 +67,10 @@ def add_task():
     for task in valid_tasks:
         worksheet.append_row([str(date_task), task])
 
-    print(Fore.GREEN + f"\nTask(s) {tasks} have been added for {date_task}.\n"
-          + Style.RESET_ALL)
+    print(
+        Fore.GREEN +
+        f"\nTask(s) {valid_tasks} have been added for {date_task}.\n" +
+        Style.RESET_ALL)
 
 
 def show_task():

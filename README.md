@@ -13,6 +13,7 @@
 * [Structure](#structure)
     * [Features](#features)
     * [Features left to implement]()
+* [Technologies]()
 
 ## Introduction
 
@@ -164,6 +165,8 @@ IMPLEMENTATION
     ### Features Left to Implement
 
     As a future improvement, I plan to implement a feature that allows users to exit the application at any time by entering the keyword '0'. 
+
+    
 
     
 
