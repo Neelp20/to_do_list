@@ -164,7 +164,15 @@ IMPLEMENTATION
 
     ### Features Left to Implement
 
-    As a future improvement, I plan to implement a feature that allows users to exit the application at any time by entering the keyword '0'. 
+    As a future improvement, I plan to implement a feature that allows users to exit the application at any time by entering the keyword '0'.
+
+    ## Technologies
+
+    * Python - Python was the main language used to build the application.
+    * Google Sheet - This was used as data storage in order to store the list of tasks.
+    * Gspread - This was used to access and update data in spreadsheet.
+    * Colorama - Colorama was used to add colored text and styling to terminal output.
+
 
     
 
