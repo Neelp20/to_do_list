@@ -71,6 +71,10 @@ def add_task():
         Fore.GREEN +
         f"\nTask(s) {valid_tasks} have been added for {date_task}.\n" +
         Style.RESET_ALL)
+    
+    
+def get_date(e):
+    return e['Date']
 
 
 def show_task():
@@ -80,6 +84,7 @@ def show_task():
     # Fetch data from google sheet
     worksheet = SHEET.worksheet('mytasks')  # Access mytasks worksheet.
     data = worksheet.get_all_records()  # Fetch the records
+    data.sort(key=get_date)
 
     if not data:  # check if the sheet is empty
         print(Fore.RED + "list is empty!" + Style.RESET_ALL)
