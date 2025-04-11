@@ -16,6 +16,7 @@
 * [Technologies](#technologies)
 * [Testing](#testing)
     * [Pep8ci Validation](#pep8ci-validation)
+* [Deployment]()
 
 
 ## Introduction
@@ -183,6 +184,41 @@ IMPLEMENTATION
     All python code was ran through https://pep8ci.herokuapp.com/ validator and any warnings or errors were fixed. Code then validated successfully.
 
     ![Pep8ci](docs/testing/linter_validation.png)
+
+    ## Deployment
+
+    ### Version Control
+    The site was created using the Visual Studio Code editor and pushed to github to the remote repository `to_do_list`.
+
+    The following git commands were used throughout development to push code to the remote repo:
+
+    ```git add <file>``` - This command was used to add the file(s) to the staging area before they are committed.
+
+    ```git commit -m â€œcommit messageâ€``` - This command was used to commit changes to the local repository queue ready for the final step.
+
+    ```git push``` - This command was used to push all committed code to the remote repository on github.
+
+    ### Heruko Deployment
+
+    The below steps were followed to deploy this project to Heroku:
+
+    * Go to Heroku and click to "create new app".
+    * Choose an app name and region, click "Create app".
+    * Go to "Settings" and navigate to Config Vars - Reveal Config Vars. Add the following config variables:
+      * GOOGLE SHEET : KEY :- CREDS, VALUE :- Copy the json file and paste here, click on Add.
+      * PORT : 8000
+    * Navigate to Buildpacks and add buildpacks for Python and NodeJS (in that order).
+    * Navigate to "Deploy". Set the deployment method to Github and enter repository name and connect.
+    * Scroll down to Manual Deploy, select "main" branch and click "Deploy Branch".
+    * The app will now be deployed to heroku.
+
+    ### Clone Locally
+
+    * Open IDE of choice and type the following into the terminal:
+       * ```git clone https://github.com/Neelp20/to_do_list.git```
+    * Project will now be cloned locally.
+
+    Note: If you want to use the application, follow the steps provided for Google Sheet.
 
 
 
