@@ -1,4 +1,6 @@
-# To Do List
+"""
+To Do List to manage tasks including adding, viewing and deleting tasks.
+"""
 import datetime  # geeksforgeeks.org
 import gspread
 from google.oauth2.service_account import Credentials
