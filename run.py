@@ -1,7 +1,7 @@
 # To Do List
+import datetime  # geeksforgeeks.org
 import gspread
 from google.oauth2.service_account import Credentials
-import datetime  # geeksforgeeks.org
 # import colorama
 from colorama import init, Fore, Back, Style
 init()
@@ -71,7 +71,7 @@ def add_task():
         Fore.GREEN +
         f"\nTask(s) {valid_tasks} have been added for {date_task}.\n" +
         Style.RESET_ALL)
-    
+
 
 def get_date(e):
     """
