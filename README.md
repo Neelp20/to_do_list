@@ -12,8 +12,11 @@
     * [Features Planned](#features-planned)
 * [Structure](#structure)
     * [Features](#features)
-    * [Features left to implement]()
-* [Technologies]()
+    * [Features left to implement](#features-left-to-implement)
+* [Technologies](#technologies)
+* [Testing](#testing)
+    * [Pep8ci Validation](#pep8ci-validation)
+
 
 ## Introduction
 
@@ -172,6 +175,15 @@ IMPLEMENTATION
     * Google Sheet - This was used as data storage in order to store the list of tasks.
     * Gspread - This was used to access and update data in spreadsheet.
     * Colorama - Colorama was used to add colored text and styling to terminal output.
+
+    ## Testing
+
+    ### Pep8ci Validation
+
+    All python code was ran through https://pep8ci.herokuapp.com/ validator and any warnings or errors were fixed. Code then validated successfully.
+
+    ![Pep8ci](docs/testing/linter_validation.png)
+
 
 
     
