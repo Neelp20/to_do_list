@@ -190,11 +190,11 @@ IMPLEMENTATION
 
     Below are the text execution of positive functional tests:
 
-    ![test_ss1](docs/testing/testing1.png)
+    ![test_ss1](docs/testing/test1.png)
 
-    ![test_ss2](docs/testing/testing2.png)
+    ![test_ss2](docs/testing/test2.png)
 
-    ![test_ss3](docs/testing/testing3.png)
+    ![test_ss3](docs/testing/test3.png)
 
     Negative input validation testing was performed on all menu options to ensure correct input. All options behaved as expected, alerting the user of invalid input and then asking for input again.
 
