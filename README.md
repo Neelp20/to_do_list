@@ -15,6 +15,7 @@
     * [Features left to implement](#features-left-to-implement)
 * [Technologies](#technologies)
 * [Testing](#testing)
+    * [Functional Testing](#functional-testing)
     * [Pep8ci Validation](#pep8ci-validation)
 * [Deployment](#deployment)
     * [Version Control](#version-control)
@@ -184,6 +185,18 @@ IMPLEMENTATION
     * Colorama - Colorama was used to add colored text and styling to terminal output.
 
     ## Testing
+
+    ### Functional Testing
+
+    Below are the text execution of positive functional tests:
+
+    ![test_ss1](docs/testing/testing1.png)
+
+    ![test_ss2](docs/testing/testing2.png)
+
+    ![test_ss3](docs/testing/testing3.png)
+
+    Negative input validation testing was performed on all menu options to ensure correct input. All options behaved as expected, alerting the user of invalid input and then asking for input again.
 
     ### Pep8ci Validation
 
