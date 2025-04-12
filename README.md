@@ -104,6 +104,10 @@ IMPLEMENTATION
 
   ![Add Task:-Incorrect data](docs/screenshots/add_task_error.png)
 
+  * Add Task:- Mixed data (strings and numbers)
+
+  ![Add Task:- Mixed data type](docs/screenshots/addtask_both.png)
+
   USER STORY
 
   `
