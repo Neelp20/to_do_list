@@ -17,6 +17,7 @@
 * [Testing](#testing)
     * [Functional Testing](#functional-testing)
     * [Pep8ci Validation](#pep8ci-validation)
+    * [Bugs and Fixes]()
 * [Deployment](#deployment)
     * [Version Control](#version-control)
     * [Heroku Deployment](#heruko-deployment)
@@ -207,6 +208,10 @@ IMPLEMENTATION
     All python code was ran through https://pep8ci.herokuapp.com/ validator and any warnings or errors were fixed. Code then validated successfully.
 
     ![Pep8ci](docs/testing/linter_validation.png)
+
+    ### Bugs and Fixes
+
+    Validation had to be added to ensure the latest date should show in the beginning of the list.
 
     ## Deployment
 
