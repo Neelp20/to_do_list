@@ -82,6 +82,8 @@ Main Menu - Invalid Choice
 
 ![Main Menu - Invalid Choice](docs/screenshots/invalid_input.png)
 
+![Main menu - Invalid choice](docs/screenshots/invalid_main_screenshot.png)
+
 USER STORY
 
 `
@@ -105,6 +107,7 @@ IMPLEMENTATION
   * Add Task:- Incorrect data
 
   ![Add Task:-Incorrect data](docs/screenshots/add_task_error.png)
+
 
   * Add Task:- Mixed data (strings and numbers)
 
