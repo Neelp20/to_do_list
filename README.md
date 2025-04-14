@@ -18,7 +18,7 @@
 * [Testing](#testing)
     * [Functional Testing](#functional-testing)
     * [Pep8ci Validation](#pep8ci-validation)
-    * [Bugs and Fixes]()
+    * [Bugs and Fixes](#bugs-and-fixes)
 * [Deployment](#deployment)
     * [Version Control](#version-control)
     * [Heroku Deployment](#heruko-deployment)
@@ -219,7 +219,7 @@ IMPLEMENTATION
 
     ### Bugs and Fixes
 
-    Validation had to be added to ensure the latest date should show in the beginning of the list.
+    Validation had to be added to ensure the latest date should show in the beginning of the list. as it was showing the latest tasks added in the list ignoring the date which needs prior attention.
 
     ## Deployment
 
