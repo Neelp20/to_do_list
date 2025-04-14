@@ -19,6 +19,7 @@
     * [Bugs and Fixes](#bugs-and-fixes)
 * [Deployment](#deployment)
     * [Version Control](#version-control)
+    * [Google Sheet](#google-sheet)
     * [Heroku Deployment](#heruko-deployment)
     * [Clone Locally](#clone-locally)
 * [Credits](#credits)
@@ -188,6 +189,7 @@ IMPLEMENTATION
 
     ![Logical Flow](docs/flow/flow_screenshot.png)
 
+
     ## Technologies
 
     * Python - Python was the main language used to build the application.
@@ -232,6 +234,17 @@ IMPLEMENTATION
     ```git commit -m â€œcommit messageâ€``` - This command was used to commit changes to the local repository queue ready for the final step.
 
     ```git push``` - This command was used to push all committed code to the remote repository on github.
+
+    ### Google sheet
+
+    * Creating a spreadsheet in Google sheets:-
+      * Log in with Google account and go to Google apps(on top right of the page).
+      * Click on Drive and then on top left on the page click on 'New' and select Google sheets.
+      * Blank spreadsheet will get open which can be renamed with desired name for the file.
+      * Use the grid to enter your data into rows (horizontal) and columns (vertical).
+      * Google Sheets saves automatically, so you don’t need to worry about losing your changes.
+      * Click the "Share" button in the top-right to allow others to view or edit your spreadsheet.
+
 
     ### Heruko Deployment
 
