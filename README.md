@@ -270,6 +270,10 @@ IMPLEMENTATION
     [Colorama](https://www.geeksforgeeks.org/introduction-to-python-colorama/)
 
     [sorting date in ascending order](https://www.w3schools.com/python/ref_list_sort.asp)
+    
+    * My Mentor Gareth McGirr for his guidance and support throughout my project.
+
+  
 
 
 
