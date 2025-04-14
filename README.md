@@ -13,6 +13,7 @@
 * [Structure](#structure)
     * [Features](#features)
     * [Features left to implement](#features-left-to-implement)
+* [Logical Flow]()
 * [Technologies](#technologies)
 * [Testing](#testing)
     * [Functional Testing](#functional-testing)
@@ -181,6 +182,10 @@ IMPLEMENTATION
     ### Features Left to Implement
 
     As a future improvement, I plan to implement a feature that allows users to exit the application at any time by entering the keyword '0'.
+
+    ## Logical Flow
+
+    ![Logical Flow](docs/flow/flow_screenshot.png)
 
     ## Technologies
 
