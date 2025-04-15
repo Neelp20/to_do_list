@@ -1,5 +1,6 @@
-# To Do List
+# My To Do List
 
+![Gif of app](docs/screenshots/app.gif)
 
 ## Table of Contents
 
@@ -196,6 +197,7 @@ IMPLEMENTATION
     * Google Sheet - This was used as data storage in order to store the list of tasks.
     * Gspread - This was used to access and update data in spreadsheet.
     * Colorama - Colorama was used to add colored text and styling to terminal output.
+    * Clidoo.com - this was used to screen record the Gif for the readme. It was originally an MP4 and veed.io was used to convert to GIF format.
 
     ## Testing
 
